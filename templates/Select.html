@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block body  %}
+    
+
+    <form action="Select" method="POST">
+    <div id="Group_list">
+        <input type="radio" name="GName" checked value = 'iu411'>
+        <p>ИУ4-11D</p>
+
+        <input type="radio" name="GName" value = 'iu412'>
+        <p>ИУ4-12B</p>
+
+        <input type="radio" name="GName" value = 'iu413'>
+        <p>ИУ4-13B</p>
+
+        <input type="radio" name="GName" value = ' rt211'>
+        <p>RT2-11B</p>
+    </div>
+
+    <div id="Day_list">
+        <input type="radio" name="Sort" checked value = 'descending'></p>
+        <p>sort descending</p>
+    </div>
+    <div id="Day_list">
+        <input type="radio" name="Sort" value = 'ascending'></p>
+        <p>sort ascending</p>
+    </div>
+    <input type="submit"  value = 'SELECT'>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Student_Name</th>
+                <th>Student_Surname</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+{% endblock body %}

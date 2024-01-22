@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мой второй сайт</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='../static/style.css') }}">
+</head>
+<body>
+    <div class = 'title'><h1> Мой второй сайт </h1></div>
+    
+    <nav>
+      <ul>
+          <li {% if active  == 'HomePage' %} class="active"{% endif %} ><a href="/HomePage">HomePage</a></li>
+          
+          <li {% if active  == 'Insert' %} class="active"{% endif %} ><a href="/Insert">Insert</a></li>
+          <li {% if active  == 'Delete' %} class="active"{% endif %}><a href="/Delete">Delete</a></li>
+          <li {% if active  == 'Select' %} class="active"{% endif %}><a href="/Select">Select</a></li>
+          <li {% if active  == 'Select2' %} class="active"{% endif %}><a href="/Select2">Select2</a></li>
+          <div {% if active == 'Create' %} class="active" {% endif %} id='create'><li ><a href="/Create">Create</a></li></div>
+      </ul>
+  </nav>
+   
+    {% block body %}
+        {% block titlepage %}
+        {% endblock  titlepage %}
+    {% endblock body%}
+
+    <footer>
+        <div class="container">
+          <p class="copyright">Разработано на ИУ4, 2023</p>
+        </div>
+      </footer>
+</body>
+</html>

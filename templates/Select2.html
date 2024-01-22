@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block body  %}
+    
+
+    <form action="Select2" method="POST">
+    <div id="Day_list">
+        <input type="radio" name="Sex" checked value = 'Man'></p>
+        <p>Man</p>
+        </div>
+        <div id="Day_list">
+        <input type="radio" name="Sex" value = 'Woman'></p>
+        <p>Women</p>
+        </div>
+        <div id="Day_list"  width="200">
+            <input type="number" name="Day" value="15" width="200" min="1" max="31">
+            <h2>Day</h2>
+        </div>
+        <div id="Day_list">
+            <input type="radio" name="Sort" value = 'sort descending'></p>
+            <p>sort descending</p>
+        </div>
+        <div id="Day_list">
+            <input type="radio" name="Sort" checked value = 'ascending'></p>
+            <p>sort ascending</p>
+        </div>
+        <input type="submit"  value = 'SELECT'>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Student_Name</th>
+                <th>Student_Surname</th>
+                <th>Group_Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

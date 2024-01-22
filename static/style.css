@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    background-color: magenta;
+    margin: 7px auto;
+    display: block;
+    position: relative;
+    color: white;
+}
+
+nav {
+    background-color: rgb(122, 119, 119);
+    color: rgb(58, 53, 53);
+    padding: 2px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+nav ul li a:hover {
+    background-color: #adadad;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 14px;
+}
+nav ul li b {
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a {
+    padding: 10px;
+}
+
+footer {
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+.copyright {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+  }
+#create{ 
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+    
+}
+table {
+    border-collapse: collapse;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+#Group_list{
+    display: flex;
+}
+#Day_list{
+    display: flex;
+    padding: 10px 5px 2px 0px;
+}
+.active {
+    background-color: #333;
+    border-color: #333;
+    color: #eee;
+    padding: 2px;
+}

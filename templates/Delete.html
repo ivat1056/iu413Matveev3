@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body  %}
+   
+    <form action="Delete" method="POST">
+
+    <h2>Name</h2>
+    <input type="text" name="Name"  minlength="1"  value= '' required>
+    <h2>Sname</h2>
+    <input type="text" name="Sname" minlength="1"  value= ''  required>
+    <br>
+    <input type="submit"  value = 'DELETE'>
+
+</form>
+{% endblock body %}

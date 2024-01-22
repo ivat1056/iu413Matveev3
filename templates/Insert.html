@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block body  %}
+
+    <form action="Insert" method="POST">
+    <h2>Name</h2>
+    <input type="text" name="Name"  minlength="1"  value= '' required>
+    <h2>Sname</h2>
+    <input type="text" name="Sname" minlength="1"  value= ''  required>
+    <br>
+    <div id="Day_list"  width="200">
+        <input type="number" name="Day" value="15" width="200" min="1" max="31">
+        <h2>Day</h2>
+    </div>
+    <div id="Day_list">
+    <input type="radio" name="Sex" checked value = 'Man'></p>
+    <p>Man</p>
+    </div>
+    <div id="Day_list">
+    <input type="radio" name="Sex" value = 'Woman'></p>
+    <p>Women</p>
+    </div>
+    <h2>Group</h2>
+    <div id="Group_list">
+        <input type="radio" name="GName" checked value = 'iu411'>
+        <p>ИУ4-11D</p>
+
+        <input type="radio" name="GName" value = 'iu412'>
+        <p>ИУ4-12B</p>
+
+        <input type="radio" name="GName" value = 'iu413'>
+        <p>ИУ4-13B</p>
+
+        <input type="radio" name="GName" value = ' rt211'>
+        <p>RT2-11B</p>
+    </div>
+    
+    
+        <input type="submit" value="INSERT">
+
+
+    </form>
+
+    
+{% endblock %}
