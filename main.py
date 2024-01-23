@@ -1,12 +1,17 @@
 from flask import Flask, render_template, url_for, request
-import sqlite3
+import sqlite3, os
 
 app = Flask(__name__)
+
+def Puth():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    db_path = os.path.join(current_dir, 'database.db')
+    return db_path
 
 @app.route('/')
 @app.route('/Create')
 def Create():
-    connection = sqlite3.connect('./database.db')
+    connection = sqlite3.connect(Puth())
     cursor = connection.cursor()       # Создание таблицы students                  
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS Students (
@@ -23,7 +28,7 @@ def Create():
     return render_template("Create.html", active='Create')
 @app.route('/HomePage')
 def HomePage():
-    connection = sqlite3.connect('database.db')
+    connection = sqlite3.connect(Puth())
     cursor = connection.cursor() 
     cursor.execute(''' SELECT * FROM Students''')
     data  = cursor.fetchall()
@@ -60,7 +65,7 @@ def Select():
     if request.method == 'POST':
         grname = request.form['GName']
         sort = request.form['Sort']
-        connection = sqlite3.connect('database.db')
+        connection = sqlite3.connect(Puth())
         cursor = connection.cursor() 
         if (sort == "descending"):
             cursor.execute("SELECT name, sname  FROM Students WHERE grname=? ORDER BY sname DESC", [grname])
@@ -77,7 +82,7 @@ def Select2():
         sex = request.form['Sex']
         day = request.form['Day']
         sort = request.form['Sort']
-        connection = sqlite3.connect('database.db')
+        connection = sqlite3.connect(Puth())
         cursor = connection.cursor() 
         if (sort == "descending"):
             cursor.execute("SELECT name, sname, grname  FROM Students WHERE sex=? AND day>? ORDER BY sname DESC", [sex],[day])
