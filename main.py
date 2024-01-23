@@ -42,7 +42,7 @@ def Insert():
         grname = request.form['GName']
         sex = request.form['Sex']
         day = request.form['Day']
-        connection = sqlite3.connect('database.db')
+        connection = sqlite3.connect(Puth())
         cursor = connection.cursor() 
         cursor.execute("INSERT INTO Students (name, sname, grname, sex, day ) VALUES (?,?,?,?,?)",(name, sname, grname, sex,day))
         connection.commit()
@@ -53,7 +53,7 @@ def Delete():
     if request.method == 'POST':
         name = request.form['Name']
         sname = request.form['Sname']
-        connection = sqlite3.connect('database.db')
+        connection = sqlite3.connect(Puth())
         cursor = connection.cursor() 
         cursor.execute("DELETE FROM Students WHERE name=? AND sname=? ", (name, sname)) 
         connection.commit()
