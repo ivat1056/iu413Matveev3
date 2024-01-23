@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block body  %}
-    
-
+<div class = 'title'> <center><h1>Сортировка 1</h1></center></div>
     <form action="Select" method="POST">
     <div id="Group_list">
         <input type="radio" name="GName" checked value = 'iu411'>
@@ -13,16 +12,16 @@
         <input type="radio" name="GName" value = 'iu413'>
         <p>ИУ4-13B</p>
 
-        <input type="radio" name="GName" value = ' rt211'>
+        <input type="radio" name="GName" value = 'rt211'>
         <p>RT2-11B</p>
     </div>
 
     <div id="Day_list">
-        <input type="radio" name="Sort" checked value = 'descending'></p>
+        <input type="radio" name="Sort" checked value = 'descending'>
         <p>sort descending</p>
     </div>
     <div id="Day_list">
-        <input type="radio" name="Sort" value = 'ascending'></p>
+        <input type="radio" name="Sort" value = 'ascending'>
         <p>sort ascending</p>
     </div>
     <input type="submit"  value = 'SELECT'>

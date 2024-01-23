@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/Create')
 def Create():
-    connection = sqlite3.connect('database.db')
+    connection = sqlite3.connect('./database.db')
     cursor = connection.cursor()       # Создание таблицы students                  
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS Students (
@@ -82,7 +82,7 @@ def Select2():
         if (sort == "descending"):
             cursor.execute("SELECT name, sname, grname  FROM Students WHERE sex=? AND day>? ORDER BY sname DESC", [sex],[day])
         else:
-            cursor.execute("SELECT name, sname, grname  FROM Students WHERE sex=? AND day>? ORDER BY sname ", (sex, day))
+            cursor.execute("SELECT name, sname, grname  FROM Students WHERE sex=? AND day>? ORDER BY sname ", [sex, day])
         data  = cursor.fetchall()
         connection.commit()
         connection.close()

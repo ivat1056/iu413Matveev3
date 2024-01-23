@@ -1,28 +1,28 @@
 {% extends 'base.html' %}
 {% block body  %}
-    
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Student_Name</th>
-                <th>Student_Surname</th>
-                <th>Group_Name</th>
-                <th>Sex</th>
-                <th>Day</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in data %}
-            <tr>
-                <td>{{ row[0] }}</td>
-                <td>{{ row[1] }}</td>
-                <td>{{ row[2] }}</td>
-                <td>{{ row[3] }}</td>
-                <td>{{ row[4] }}</td>
-                <td>{{ row[5] }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<div class = 'title'> <center><h1>Вывод данных</h1></center></div>    
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Student_Name</th>
+            <th>Student_Surname</th>
+            <th>Group_Name</th>
+            <th>Sex</th>
+            <th>Day</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock body %}
